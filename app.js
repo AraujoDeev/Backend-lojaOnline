@@ -114,7 +114,7 @@ app.post('/auth/login', async (req, res) => {
 })
 
 const dbUser = process.env.DB_USER
-const dbPassword = process.env.DB_PASS
+const dbPassword = process.env.DB_PASSWORD
 
 mongoose
   .connect(
@@ -124,4 +124,4 @@ mongoose
     app.listen(3000)
     console.log('Servidor esta funcionando')
   })
-  .catch((err) => console.log('err'))
+  .catch((err) => console.log(err))
