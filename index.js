@@ -12,6 +12,8 @@ app.use(express.json())
 
 const User = require('./models/User')
 
+const port = process.env.PORT || 3000
+
 app.get('/', (req, res) => {
   res.status(200).json({ msg: 'bem vindo' })
 })
@@ -121,7 +123,7 @@ mongoose
     `mongodb+srv://${dbUser}:${dbPassword}@cluster0.b305mpg.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(3000)
+    app.listen(port)
     console.log('Servidor esta funcionando')
   })
   .catch((err) => console.log(err))
